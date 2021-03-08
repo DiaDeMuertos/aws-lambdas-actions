@@ -1,0 +1,26 @@
+service: usahs-nodelayers
+
+package:
+  individually: true
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-1'}
+  deploymentBucket:
+    name: usahs-deploys
+  versionFunctions: true
+
+layers:
+  nodeTen:
+    path: node10
+    name: ${self:service}-nodeTen-${self:provider.stage}
+
+# resources:
+#   Outputs:
+#     nodeTenArn:
+#       Value:
+#         Ref: NodeTenLambdaLayer
+#       Export:
+#         Name: ${self:service}-nodeTenArn-${self:provider.stage}

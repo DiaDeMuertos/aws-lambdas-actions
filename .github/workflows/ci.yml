@@ -1,0 +1,22 @@
+name: dev-actions
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+      - master
+jobs:
+  check-bats-version:
+    env:      
+      STAGE_DEV: 'dev'
+      STAGE_PROD: 'prod'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm install -g serverless
+      - run: |
+          export STAGE=$STAGE_DEV
+          ./deploy.sh $STAGE 'us-east-1'

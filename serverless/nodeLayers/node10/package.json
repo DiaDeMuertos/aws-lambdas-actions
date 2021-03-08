@@ -1,0 +1,12 @@
+{
+  "name": "nodelayer",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.859.0",
+    "moment-timezone": "^0.5.33",
+    "ramda": "^0.27.1"
+  }
+}
