@@ -12,13 +12,11 @@ jobs:
     env: 
       AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
       AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}     
-      STAGE_DEV: 'dev'
-      STAGE_PROD: 'prod'
+      STAGE: 'dev'
+      REGION: 'us-east-1'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - run: npm install -g serverless
-      - run: |
-          export STAGE=$STAGE_DEV
-          ./deploy.sh $STAGE 'us-east-1'
+      - run: ./deploy.sh $STAGE $REGION
