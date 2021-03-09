@@ -2,11 +2,11 @@ on:
   push:
     branches:
       - develop
-    paths:
-      - 'serverless/hello/**'
   pull_request:
     branches:
       - develop
+  paths:
+    - 'serverless/hello/**'
 jobs:
   lambdaDeploy:
     env:

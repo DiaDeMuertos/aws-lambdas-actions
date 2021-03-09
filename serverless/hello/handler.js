@@ -8,7 +8,7 @@ module.exports.hello = async (event) => {
   return {
     statusCode: 200,
     body: JSON.stringify({
-      message: 'Hi, this is just a demo!!!!!',
+      message: 'Hi, this is just a demo!!!!!!',
       today: today,
     }),
   };
