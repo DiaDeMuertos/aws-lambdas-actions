@@ -1,0 +1,22 @@
+{
+  "name": "aws-lambdas-actions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generate.js",
+  "scripts": {
+    "generate": "node generate.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiaDeMuertos/aws-lambdas-actions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DiaDeMuertos/aws-lambdas-actions/issues"
+  },
+  "homepage": "https://github.com/DiaDeMuertos/aws-lambdas-actions#readme",
+  "dependencies": {
+    "generate-template-files": "^3.0.0"
+  }
+}

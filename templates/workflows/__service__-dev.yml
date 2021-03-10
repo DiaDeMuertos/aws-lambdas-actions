@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+      - develop
+    paths:
+      - 'serverless/__service__/**'
+  pull_request:
+    branches:
+      - develop
+    paths:
+      - 'serverless/__service__/**'
+jobs:
+  lambdaDeploy:
+    env:
+      AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
+      AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+      STAGE: 'dev'
+      REGION: 'us-east-1'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm install -g serverless
+      - run: cd serverless/__service__ && sls deploy -s $STAGE -r $REGION

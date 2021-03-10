@@ -1,0 +1,28 @@
+service: usahs-__service__
+
+package:
+  exclude:
+    - node_modules/**
+    - package*.json
+  individually: true
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-1'}
+  deploymentBucket:
+    name: usahs-deploys
+  versionFunctions: false
+
+  environment:
+    NODE_PATH: './:/opt/node_modules'
+
+  # example how to add layers
+  # layers:
+  #   - ${cf:usahs-nodelayers-${self:provider.stage}.nodeTenArn}
+
+functions:
+  __service__:
+    name: ${self:service}-${self:provider.stage}
+    handler: handler.__service__
