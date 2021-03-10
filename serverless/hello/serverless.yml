@@ -18,8 +18,9 @@ provider:
   environment:
     NODE_PATH: './:/opt/node_modules'
   
-  # layers:
+  layers:
     #  - !ImportValue usahs-nodelayers-nodeTenArn-${self:provider.stage}
+    - ${cf:usahs-nodelayers-${self:provider.stage}.nodeTenArn}
 
 functions:
   hello:
