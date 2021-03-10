@@ -23,5 +23,5 @@ jobs:
       - uses: actions/setup-node@v1
       - run: npm install -g serverless
       - run: |
-        cd serverless/emailTrigger
-        sls deploy -s $STAGE -r $REGION
+          cd serverless/emailTrigger
+          sls deploy -s $STAGE -r $REGION
