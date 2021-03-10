@@ -1,3 +1,4 @@
+name: __service__-prod-actions
 on:
   push:
     branches:

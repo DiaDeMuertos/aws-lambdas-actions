@@ -1,3 +1,4 @@
+name: __service__-dev-actions
 on:
   push:
     branches:
