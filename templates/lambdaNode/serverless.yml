@@ -2,7 +2,6 @@ service: usahs-__service__
 
 package:
   exclude:
-    - node_modules/**
     - package*.json
   individually: true
 
@@ -15,10 +14,10 @@ provider:
     name: usahs-deploys
   versionFunctions: false
 
-  environment:
-    NODE_PATH: './:/opt/node_modules'
-
   # example how to add layers
+  # environment:
+  #   NODE_PATH: './:/opt/node_modules'
+
   # layers:
   #   - ${cf:usahs-nodelayers-${self:provider.stage}.nodeTenArn}
 

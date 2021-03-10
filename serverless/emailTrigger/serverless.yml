@@ -2,8 +2,7 @@ service: usahs-emailTrigger
 
 package:
   exclude:
-    - node_modules/**
-    - package*.json
+    - package-lock.json
   individually: true
 
 provider:
@@ -15,11 +14,11 @@ provider:
     name: usahs-deploys
   versionFunctions: false
 
-  environment:
-    NODE_PATH: './:/opt/node_modules'
+  # environment:
+  #   NODE_PATH: './:/opt/node_modules'
 
-  layers:
-    - ${cf:usahs-nodelayers-${self:provider.stage}.nodeTenArn}
+  # layers:
+  #   - ${cf:usahs-nodelayers-${self:provider.stage}.nodeTenArn}
 
 functions:
   emailTrigger:

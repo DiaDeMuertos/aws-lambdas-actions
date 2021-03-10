@@ -2,7 +2,9 @@
   "name": "emailtrigger",
   "version": "1.0.0",
   "description": "",
-  "dependencies": {},
+  "dependencies": {
+    "moment-timezone": "^0.5.33"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {}

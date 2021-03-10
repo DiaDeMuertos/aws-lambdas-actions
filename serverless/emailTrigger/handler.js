@@ -1,10 +1,15 @@
 'use strict';
 
+const moment = require('moment-timezone');
+
 module.exports.emailTrigger = async (event) => {
+  const today = moment().utc().format('YYYY-MM-DD HH:mm:ss');
+
   return {
     statusCode: 200,
     body: JSON.stringify({
-      message: 'template message!!',
+      message: 'Hi, this is just a demo!!!!!!!',
+      today: today,
     }),
   };
 };
