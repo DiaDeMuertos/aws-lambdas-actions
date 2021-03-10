@@ -1,3 +1,4 @@
+name: hello-dev-actions
 on:
   push:
     branches:
